@@ -22,7 +22,10 @@ const onMotionEvent = (e) => {
 
 const interal_func = setInterval(function() {
     flag != flag
+
+    console.log(flag)
 }, 100)
+
 
 test_target.innerHTML = String(window.DeviceMotionEvent);
 
