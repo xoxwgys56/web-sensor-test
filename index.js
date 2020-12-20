@@ -15,8 +15,8 @@ let count = 0;
 
 const interal_func = setInterval(function() {
     // console.log(window.DeviceMotionEvent.acceleration)
-    // z_value_dom.innerHTML = window.DeviceMotionEvent.acceleration.z
     interval_dom.innerHTML = count++;
+    z_value_dom.innerHTML = window.DeviceMotionEvent.acceleration.z
 }, 1000)
 
 console.log(interal_func)
