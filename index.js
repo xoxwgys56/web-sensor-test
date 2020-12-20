@@ -9,7 +9,7 @@ const interval_dom = document.querySelector('#interval');
 const test_target = document.querySelector('#test-target');
 const time_dom = document.querySelector('#time');
 
-let flag = false
+let flag = true
 
 const interal_func = setInterval(function() {
     flag = !flag
@@ -55,6 +55,8 @@ let value = 0
 
 window.addEventListener('devicemotion', e => {
     if (flag) {
+        e.interval = 0.01
+
         z_value = e.acceleration.z.toFixed(3)
         z_value_dom.innerHTML = z_value;
         value_arr.push(z_value)
