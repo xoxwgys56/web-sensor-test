@@ -10,14 +10,14 @@ const test_target = document.querySelector('#test-target');
 
 let flag = false
 
-const onMotionEvent = e => {
-    if (flag) {
-        z_value_dom.innerHTML = e.acceleration.z;
-        interval_dom.innerHTML = Date.now();
-        test_target.innerHTML = 'measure...!'
-    }else {
-        test_target.innerHTML = 'wait...'
-    }
+const onMotionEvent = (e) => {
+    // if (flag) {
+    z_value_dom.innerHTML = e.acceleration.z;
+    interval_dom.innerHTML = Date.now();
+    test_target.innerHTML = 'measure...!'
+    // }else {
+    //     test_target.innerHTML = 'wait...'
+    // }
 }
 
 const interal_func = setInterval(function() {
