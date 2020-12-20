@@ -6,12 +6,17 @@ const max_count = 1500;
 const z_value_dom = document.querySelector('#z-value');
 const interval_dom = document.querySelector('#interval');
 
+const test_target = document.querySelector('#test-target');
+
 let flag = false
 
 const onMotionEvent = e => {
     if (flag) {
         z_value_dom.innerHTML = e.acceleration.z;
         interval_dom.innerHTML = Date.now();
+        test_target.innerHTML = 'measure...!'
+    }else {
+        test_target.innerHTML = 'wait...'
     }
 }
 
@@ -19,9 +24,6 @@ const interal_func = setInterval(function() {
     flag != flag
 }, 100)
 
-console.log(interal_func)
-
-const test_target = document.querySelector('#test-target');
 test_target.innerHTML = String(window.DeviceMotionEvent);
 
 DeviceOrientationEvent.requestPermission();
