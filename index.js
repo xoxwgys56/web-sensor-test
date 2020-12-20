@@ -11,14 +11,10 @@ const time_dom = document.querySelector('#time');
 
 let flag = false
 
-const onMotionEvent = (e) => {
-
-}
-
 const interal_func = setInterval(function() {
     flag = !flag
 
-    console.log(flag)
+    // console.log(flag)
 }, 1000)
 
 
@@ -54,13 +50,20 @@ if ( location.protocol != "https:" ) {
     const btn = document.getElementById( "request" );
     btn.addEventListener( "click", permission );
 
+let value_arr = [];
+
 window.addEventListener('devicemotion', e => {
     if (flag) {
-        z_value_dom.innerHTML = e.acceleration.z.toFixed(3);
+        z_value = e.acceleration.z.toFixed(3)
+        z_value_dom.innerHTML = z_value;
+        value_arr.push(z_value)
+
         time_dom.innerHTML = Date.now();
-        interval_dom.innerHTML = e.interval.toFixed(2);
+        interval_dom.innerHTML = e.interval.toFixed(2) + ' ms';
+
         test_target.innerHTML = 'measure...!'
     }else {
         test_target.innerHTML = 'wait...'
+        value_arr = []
     }
 }, true);
