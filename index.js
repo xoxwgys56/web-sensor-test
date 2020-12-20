@@ -11,9 +11,12 @@ const interval_dom = document.querySelector('#interval');
 //     interval_dom.innerHTML = event.interval;
 // }, true);
 
+let count = 0;
+
 setInterval(function() {
     // console.log(window.DeviceMotionEvent.acceleration)
     z_value_dom.innerHTML = window.DeviceMotionEvent.acceleration.z
+    interval_dom.innerHTML = count++;
 }, 1000)
 
 const test_target = document.querySelector('#test-target');
