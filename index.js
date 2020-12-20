@@ -7,24 +7,19 @@ const z_value_dom = document.querySelector('#z-value');
 const interval_dom = document.querySelector('#interval');
 
 const test_target = document.querySelector('#test-target');
+const time_dom = document.querySelector('#time');
 
 let flag = false
 
 const onMotionEvent = (e) => {
-    if (flag) {
-        z_value_dom.innerHTML = e.acceleration.z;
-        interval_dom.innerHTML = Date.now();
-        test_target.innerHTML = 'measure...!'
-    }else {
-        test_target.innerHTML = 'wait...'
-    }
+
 }
 
 const interal_func = setInterval(function() {
     flag = !flag
 
     console.log(flag)
-}, 100)
+}, 1000)
 
 
 // test_target.innerHTML = String(window.DeviceMotionEvent);
@@ -59,4 +54,13 @@ if ( location.protocol != "https:" ) {
     const btn = document.getElementById( "request" );
     btn.addEventListener( "click", permission );
 
-window.addEventListener('devicemotion', onMotionEvent, true);
+window.addEventListener('devicemotion', e => {
+    if (flag) {
+        z_value_dom.innerHTML = e.acceleration.z.toFixed(3);
+        time_dom.innerHTML = Date.now();
+        interval_dom.innerHTML = e.interval.toFixed(2);
+        test_target.innerHTML = 'measure...!'
+    }else {
+        test_target.innerHTML = 'wait...'
+    }
+}, true);
