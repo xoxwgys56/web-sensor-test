@@ -68,4 +68,5 @@ window.addEventListener('devicemotion', e => {
         test_target.innerHTML = 'wait... ' + value
         value_arr = []
     }
+   
 }, true);
