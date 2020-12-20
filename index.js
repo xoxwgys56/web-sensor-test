@@ -51,6 +51,7 @@ if ( location.protocol != "https:" ) {
     btn.addEventListener( "click", permission );
 
 let value_arr = [];
+let value = 0
 
 window.addEventListener('devicemotion', e => {
     if (flag) {
@@ -62,10 +63,9 @@ window.addEventListener('devicemotion', e => {
         interval_dom.innerHTML = e.interval.toFixed(2) + ' ms';
 
         test_target.innerHTML = 'measure...' + value_arr.length
+        value = value_arr.length;
     }else {
-        value = value_arr.length
         test_target.innerHTML = 'wait... ' + value
-        
         value_arr = []
     }
 }, true);
