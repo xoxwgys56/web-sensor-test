@@ -11,25 +11,25 @@ const test_target = document.querySelector('#test-target');
 let flag = false
 
 const onMotionEvent = (e) => {
-    // if (flag) {
-    z_value_dom.innerHTML = e.acceleration.z;
-    interval_dom.innerHTML = Date.now();
-    test_target.innerHTML = 'measure...!'
-    // }else {
-    //     test_target.innerHTML = 'wait...'
-    // }
+    if (flag) {
+        z_value_dom.innerHTML = e.acceleration.z;
+        interval_dom.innerHTML = Date.now();
+        test_target.innerHTML = 'measure...!'
+    }else {
+        test_target.innerHTML = 'wait...'
+    }
 }
 
 const interal_func = setInterval(function() {
-    flag != flag
+    flag = !flag
 
     console.log(flag)
 }, 100)
 
 
-test_target.innerHTML = String(window.DeviceMotionEvent);
+// test_target.innerHTML = String(window.DeviceMotionEvent);
 
-DeviceOrientationEvent.requestPermission();
+// DeviceOrientationEvent.requestPermission();
 
 if ( location.protocol != "https:" ) {
     location.href = "https:" + window.location.href.substring( window.location.protocol.length );
