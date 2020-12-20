@@ -15,7 +15,7 @@ const interal_func = setInterval(function() {
     flag = !flag
 
     // console.log(flag)
-}, 1000)
+}, 10000)
 
 
 // test_target.innerHTML = String(window.DeviceMotionEvent);
