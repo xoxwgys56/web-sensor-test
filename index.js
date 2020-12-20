@@ -63,7 +63,9 @@ window.addEventListener('devicemotion', e => {
 
         test_target.innerHTML = 'measure...' + value_arr.length
     }else {
-        test_target.innerHTML = 'wait... ' + value_arr.length
+        value = value_arr.length
+        test_target.innerHTML = 'wait... ' + value
+        
         value_arr = []
     }
 }, true);
