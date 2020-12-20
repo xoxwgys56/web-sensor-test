@@ -61,9 +61,9 @@ window.addEventListener('devicemotion', e => {
         time_dom.innerHTML = Date.now();
         interval_dom.innerHTML = e.interval.toFixed(2) + ' ms';
 
-        test_target.innerHTML = 'measure...!'
+        test_target.innerHTML = 'measure...' + value_arr.length
     }else {
-        test_target.innerHTML = 'wait...'
+        test_target.innerHTML = 'wait... ' + value_arr.length
         value_arr = []
     }
 }, true);
