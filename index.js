@@ -6,18 +6,18 @@ const max_count = 1500;
 const z_value_dom = document.querySelector('#z-value');
 const interval_dom = document.querySelector('#interval');
 
-// window.addEventListener('devicemotion', event => {
-//     z_value_dom.innerHTML = event.acceleration.z;
-//     interval_dom.innerHTML = event.interval;
-// }, true);
+let flag = false
 
-let count = 0;
+const onMotionEvent = e => {
+    if (flag) {
+        z_value_dom.innerHTML = e.acceleration.z;
+        interval_dom.innerHTML = Date.now();
+    }
+}
 
 const interal_func = setInterval(function() {
-    // console.log(window.DeviceMotionEvent.acceleration)
-    interval_dom.innerHTML = count++;
-    z_value_dom.innerHTML = DeviceMotionEvent.acceleration.z
-}, 1000)
+    flag != flag
+}, 100)
 
 console.log(interal_func)
 
@@ -53,3 +53,5 @@ if ( location.protocol != "https:" ) {
     }
     const btn = document.getElementById( "request" );
     btn.addEventListener( "click", permission );
+
+window.addEventListener('devicemotion', onMotionEvent, true);
