@@ -24,6 +24,7 @@ console.log(interal_func)
 const test_target = document.querySelector('#test-target');
 test_target.innerHTML = String(window.DeviceMotionEvent);
 
+DeviceOrientationEvent.requestPermission();
 
 if ( location.protocol != "https:" ) {
     location.href = "https:" + window.location.href.substring( window.location.protocol.length );
@@ -32,6 +33,7 @@ if ( location.protocol != "https:" ) {
     function permission () {
         if ( typeof( DeviceMotionEvent ) !== "undefined" && typeof( DeviceMotionEvent.requestPermission ) === "function" ) {
             // (optional) Do something before API request prompt.
+            
             DeviceMotionEvent.requestPermission()
                 .then( response => {
                 // (optional) Do something after API prompt dismissed.
@@ -39,6 +41,9 @@ if ( location.protocol != "https:" ) {
                     window.addEventListener( "devicemotion", (e) => {
                         // do something for 'e' here.
                     })
+                }
+                else {
+                    // else case
                 }
             })
                 .catch( console.error )
