@@ -13,11 +13,13 @@ const interval_dom = document.querySelector('#interval');
 
 let count = 0;
 
-setInterval(function() {
+const interal_func = setInterval(function() {
     // console.log(window.DeviceMotionEvent.acceleration)
     z_value_dom.innerHTML = window.DeviceMotionEvent.acceleration.z
     interval_dom.innerHTML = count++;
 }, 1000)
+
+console.log(interal_func)
 
 const test_target = document.querySelector('#test-target');
 test_target.innerHTML = String(window.DeviceMotionEvent);
