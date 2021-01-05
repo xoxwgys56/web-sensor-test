@@ -15,4 +15,7 @@ const interval_dom = document.querySelector('#interval');
 
 if (DeviceMotionEvent && typeof DeviceMotionEvent.requestPermission == "function") {
     DeviceMotionEvent.requestPermission();
+    interval_dom.innerHTML = 'asked'
+} else {
+    interval_dom.innerHTML = 'not asked'
 }
