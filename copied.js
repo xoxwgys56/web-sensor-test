@@ -1,8 +1,11 @@
 const z_value_dom = document.querySelector('#z-value');
 const btn = document.getElementById( "request" );
 const time_dom = document.querySelector('#time');
+const interval_dom = document.querySelector('#interval');
 
-let now = 0
+let now = 0;
+
+let z_count = 0;
 
 function handleOrientation(event) {
     updateFieldIfNotNull('Orientation_a', event.alpha);
@@ -32,6 +35,7 @@ function handleOrientation(event) {
     updateFieldIfNotNull('Accelerometer_y', event.acceleration.y);
     updateFieldIfNotNull('Accelerometer_z', event.acceleration.z);
     z_value_dom.innerHTML = event.acceleration.z;
+    z_count += 1;
   
     updateFieldIfNotNull('Accelerometer_i', event.interval, 2);
   
@@ -71,6 +75,7 @@ function handleOrientation(event) {
       is_running = false;
     }else{
       now = new Date().getTime();
+      z_count = 0;
 
       window.addEventListener("devicemotion", handleMotion);
       window.addEventListener("deviceorientation", handleOrientation);
