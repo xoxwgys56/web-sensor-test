@@ -19,3 +19,9 @@ if (DeviceMotionEvent && typeof DeviceMotionEvent.requestPermission == "function
 } else {
     interval_dom.innerHTML = 'not asked'
 }
+
+function handleMotion(event) {
+    z_value_dom.innerHTML = event.acceleration.z
+}
+
+window.addEventListener("devicemotion", handleMotion);
