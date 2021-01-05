@@ -23,7 +23,7 @@ function handleOrientation(event) {
   function updateFieldIfNotNull(fieldName, value, precision=10){
     if (value != null)
     //   document.getElementById(fieldName).innerHTML = value.toFixed(precision);
-        console.log('test')
+        console.log(z_count);
   }
   
   function handleMotion(event) {
@@ -35,6 +35,7 @@ function handleOrientation(event) {
     updateFieldIfNotNull('Accelerometer_y', event.acceleration.y);
     updateFieldIfNotNull('Accelerometer_z', event.acceleration.z);
     z_value_dom.innerHTML = event.acceleration.z;
+    interval_dom.innerHTML - z_count;
     z_count += 1;
   
     updateFieldIfNotNull('Accelerometer_i', event.interval, 2);
