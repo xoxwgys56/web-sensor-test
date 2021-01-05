@@ -18,6 +18,7 @@ const interal_func = setInterval(function() {
 }, 10000)
 
 
+
 // test_target.innerHTML = String(window.DeviceMotionEvent);
 
 // DeviceOrientationEvent.requestPermission();
