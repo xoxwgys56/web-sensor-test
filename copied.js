@@ -16,7 +16,8 @@ function handleOrientation(event) {
   
   function updateFieldIfNotNull(fieldName, value, precision=10){
     if (value != null)
-      document.getElementById(fieldName).innerHTML = value.toFixed(precision);
+    //   document.getElementById(fieldName).innerHTML = value.toFixed(precision);
+        console.log('test')
   }
   
   function handleMotion(event) {
