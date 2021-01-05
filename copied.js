@@ -1,6 +1,7 @@
 const z_value_dom = document.querySelector('#z-value');
 const btn = document.getElementById( "request" );
 const time_dom = document.querySelector('#time');
+const count_dom = document.querySelector('#count');
 const interval_dom = document.querySelector('#interval');
 
 let now = 0;
@@ -35,10 +36,11 @@ function handleOrientation(event) {
     updateFieldIfNotNull('Accelerometer_y', event.acceleration.y);
     updateFieldIfNotNull('Accelerometer_z', event.acceleration.z);
     z_value_dom.innerHTML = event.acceleration.z;
-    interval_dom.innerHTML = z_count;
+    count_dom.innerHTML = z_count;
     z_count += 1;
   
     updateFieldIfNotNull('Accelerometer_i', event.interval, 2);
+    interval_dom.innerHTML = event.interval;
   
     updateFieldIfNotNull('Gyroscope_z', event.rotationRate.alpha);
     updateFieldIfNotNull('Gyroscope_x', event.rotationRate.beta);
@@ -77,7 +79,7 @@ function handleOrientation(event) {
     }else{
       now = new Date().getTime();
       z_count = 0;
-      interval_dom.innerHTML = z_count;
+      count_dom.innerHTML = z_count;
 
       window.addEventListener("devicemotion", handleMotion);
       window.addEventListener("deviceorientation", handleOrientation);
